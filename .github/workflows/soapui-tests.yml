@@ -34,4 +34,9 @@ jobs:
           path: reportes/
 
       - name: Publicar resultados JUnit
-        u
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Resultados SoapUI
+          path: reportes/junit-reports/*.xml
+          reporter: java-junit
